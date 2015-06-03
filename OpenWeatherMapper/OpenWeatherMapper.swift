@@ -10,9 +10,9 @@ import Foundation
 
 public class OpenWeatherMapper {
     
-    public static var baseURL = "http://api.openweathermap.org/data/2.5/"
-    public static var weatherAPIPath = "weather"
-    public static var forecastAPIPath = "forecast"
+    public static var baseURL = Const.baseURLString
+    public static var weatherAPIPath = Const.weatherAPIPath
+    public static var forecastAPIPath = Const.forecastAPIPath
     
     public static func defaultClient(#APPID: String) -> Client {
         let weatherAPI = WeatherAPI(

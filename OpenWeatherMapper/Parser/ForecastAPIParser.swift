@@ -86,7 +86,7 @@ class ForecastAPIParser: ParserProtocol {
             
             return Result.success(forecast)
         } else {
-            let error = NSError(domain: "", code: 0, userInfo: nil)
+            let error = NSError(domain: Const.errorDomain, code: Const.ErrorCode.ParseError.rawValue, userInfo: nil)
             return Result.failure(error)
         }
     }

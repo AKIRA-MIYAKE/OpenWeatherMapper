@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6111E1C1B1F250100FA33D9 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6111E1B1B1F250100FA33D9 /* Const.swift */; };
 		A6EF24EF1B16012A00E51359 /* OpenWeatherMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6EF24F51B16012A00E51359 /* OpenWeatherMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF24E91B16012A00E51359 /* OpenWeatherMapper.framework */; };
 		A6EF24FC1B16012A00E51359 /* OpenWeatherMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF24FB1B16012A00E51359 /* OpenWeatherMapperTests.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A6111E1B1B1F250100FA33D9 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		A6EF24E91B16012A00E51359 /* OpenWeatherMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWeatherMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6EF24ED1B16012A00E51359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenWeatherMapper.h; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */,
+				A6111E1B1B1F250100FA33D9 /* Const.swift */,
 				A6EF252E1B16079700E51359 /* OpenWeatherMapper.swift */,
 				A6EF252C1B16076B00E51359 /* Client.swift */,
 				A6EF25071B16021600E51359 /* API */,
@@ -322,6 +325,7 @@
 				A6EF25231B16046A00E51359 /* Temperature.swift in Sources */,
 				A6EF252B1B1606FD00E51359 /* ForecastAPI.swift in Sources */,
 				A6EF251F1B16045300E51359 /* Weather.swift in Sources */,
+				A6111E1C1B1F250100FA33D9 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +527,7 @@
 				A6EF25011B16012A00E51359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6EF25021B16012A00E51359 /* Build configuration list for PBXNativeTarget "OpenWeatherMapperTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +536,7 @@
 				A6EF25041B16012A00E51359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

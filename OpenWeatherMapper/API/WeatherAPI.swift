@@ -53,7 +53,7 @@ class WeatherAPI: APIProtocol {
                     if let data: AnyObject = data {
                         result = self.parser.parse(data)
                     } else {
-                        let error = NSError(domain: "", code: 0, userInfo: nil)
+                        let error = NSError(domain: Const.errorDomain, code: Const.ErrorCode.Unknown.rawValue, userInfo: nil)
                         result = Result.failure(error)
                     }
                 }
