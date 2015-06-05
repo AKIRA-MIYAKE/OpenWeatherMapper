@@ -12,9 +12,9 @@ import Result
 
 class WeatherAPIParser: ParserProtocol {
     
-    typealias Value = Weather
+    typealias ResultType = WeatherAPIResult
     
-    func parse(data: AnyObject) -> Result<Value, NSError> {
+    func parse(data: AnyObject) -> ResultType {
         let json = JSON(data)
         
         /* Date */
@@ -85,10 +85,14 @@ class WeatherAPIParser: ParserProtocol {
         
         
         if let weather = weather {
-            return Result.success(weather)
+            return ResultType(value: weather)
         } else {
-            let error = NSError(domain: Const.errorDomain, code: Const.ErrorCode.ParseError.rawValue, userInfo: nil)
-            return Result.failure(error)
+            let error = NSError(
+                domain: Const.errorDomain,
+                code: Const.ErrorCode.ParseError.rawValue,
+                userInfo: nil)
+            
+            return ResultType(error: error)
         }
     }
     

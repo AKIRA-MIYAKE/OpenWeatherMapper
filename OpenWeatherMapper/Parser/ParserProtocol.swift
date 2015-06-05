@@ -11,8 +11,8 @@ import Result
 
 protocol ParserProtocol {
     
-    typealias Value
+    typealias ResultType
     
-    func parse(data: AnyObject) -> Result<Value, NSError>
+    func parse(data: AnyObject) -> ResultType
     
 }

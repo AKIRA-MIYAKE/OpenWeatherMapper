@@ -12,9 +12,9 @@ import Result
 
 class ForecastAPIParser: ParserProtocol {
     
-    typealias Value = [Weather]
+    typealias ResultType = ForecastAPIResult
     
-    func parse(data: AnyObject) -> Result<Value, NSError> {
+    func parse(data: AnyObject) -> ResultType {
         let json = JSON(data)
         
         /* Coordinate */
@@ -84,10 +84,14 @@ class ForecastAPIParser: ParserProtocol {
                 }
             }
             
-            return Result.success(forecast)
+            return ResultType(value: forecast)
         } else {
-            let error = NSError(domain: Const.errorDomain, code: Const.ErrorCode.ParseError.rawValue, userInfo: nil)
-            return Result.failure(error)
+            let error = NSError(
+                domain: Const.errorDomain,
+                code: Const.ErrorCode.ParseError.rawValue,
+                userInfo: nil)
+            
+            return ResultType(error: error)
         }
     }
     

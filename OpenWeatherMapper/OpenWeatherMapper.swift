@@ -14,20 +14,18 @@ public class OpenWeatherMapper {
     public static var weatherAPIPath = Const.weatherAPIPath
     public static var forecastAPIPath = Const.forecastAPIPath
     
-    public static func defaultClient(#APPID: String) -> Client {
+    public static func defaultClient(#APPID: String) -> APIClient {
         let weatherAPI = WeatherAPI(
             parser: WeatherAPIParser(),
             baseURL: baseURL,
-            apiPath: weatherAPIPath,
-            APPID: APPID)
+            apiPath: weatherAPIPath)
         
         let forecastAPI = ForecastAPI(
             parser: ForecastAPIParser(),
             baseURL: baseURL,
-            apiPath: forecastAPIPath,
-            APPID: APPID)
+            apiPath: forecastAPIPath)
         
-        return Client(weatherAPI: weatherAPI, forecastAPI: forecastAPI)
+        return APIClient(APPID: APPID, weatherAPI: weatherAPI, forecastAPI: forecastAPI)
     }
     
 }

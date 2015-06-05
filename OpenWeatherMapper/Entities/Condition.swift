@@ -10,49 +10,32 @@ import Foundation
 
 public struct Condition {
     
-    public enum General {
-        case Unknown
-        case Clear
-        case Cloudy
-        case Rainy
-        case Snowy
+    public enum General: String {
+        case Unknown = "Unknown"
+        case Clear = "Clear"
+        case Cloudy = "Cloudy"
+        case Rainy = "Rainy"
+        case Snowy = "Snowy"
+        
+        public func toString() -> String {
+            return self.rawValue
+        }
     }
     
-    public enum Main {
-        case Unknown
-        case ClearSky
-        case FewClouds
-        case ScatteredClouds
-        case BrokenClouds
-        case ShowerRain
-        case Rain
-        case Thunderstorm
-        case Snow
-        case Mist
+    public enum Main: String {
+        case Unknown = "Unknown"
+        case ClearSky = "Clear Sky"
+        case FewClouds = "Few Clouds"
+        case ScatteredClouds = "Scattered Clunds"
+        case BrokenClouds = "Broken Crounds"
+        case ShowerRain = "Shower Rain"
+        case Rain = "Rain"
+        case Thunderstorm = "Thnderstorm"
+        case Snow = "Snow"
+        case Mist = "Mist"
         
-        func toString() -> String {
-            switch self {
-            case .Unknown:
-                return "Unknown"
-            case .ClearSky:
-                return "Clear Sky"
-            case .FewClouds:
-                return "Few Clouds"
-            case .ScatteredClouds:
-                return "Scattered Clouds"
-            case .BrokenClouds:
-                return "Broken Clouds"
-            case .ShowerRain:
-                return "Shower Rain"
-            case .Rain:
-                return "Rain"
-            case .Thunderstorm:
-                return "Thunderstorm"
-            case .Snow:
-                return "Snow"
-            case .Mist:
-                return "Mist"
-            }
+        public func toString() -> String {
+            return self.rawValue
         }
     }
     

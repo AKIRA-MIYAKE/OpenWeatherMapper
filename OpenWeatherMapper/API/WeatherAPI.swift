@@ -12,54 +12,50 @@ import Result
 
 class WeatherAPI: APIProtocol {
     
-    typealias Value = Weather
+    typealias ResultType = WeatherAPIResult
     
     // MARK: - let
     
     private let parser: WeatherAPIParser
     private let baseURL: String
     private let apiPath: String
-    private let APPID: String
     
     
     // MARK: - Initialize
     
-    init(parser: WeatherAPIParser, baseURL: String, apiPath: String, APPID: String) {
+    init(parser: WeatherAPIParser, baseURL: String, apiPath: String) {
         self.parser = parser
         
         self.baseURL = baseURL
         self.apiPath = apiPath
-        self.APPID = APPID
     }
     
     
     // MARK: - Method
     
-    func get(#coordinate: Coordinate, _ completion: Result<Value, NSError> -> Void) {
+    func get(#parameters: [String : AnyObject], _ completion: ResultType -> Void) {
         let URL = baseURL + apiPath
-        let parameters: [String: AnyObject] = [
-            "APPID": APPID,
-            "lat": coordinate.latitude,
-            "lon": coordinate.longitude
-        ]
         
         Alamofire.request(.GET, URL, parameters: parameters)
             .responseJSON { (request, response, data, error) -> Void in
-                let result: Result<Weather, NSError>
+                let result: ResultType
                 
                 if let error = error {
-                    result = Result.failure(error)
+                    result = ResultType(error: error)
                 } else {
                     if let data: AnyObject = data {
                         result = self.parser.parse(data)
                     } else {
-                        let error = NSError(domain: Const.errorDomain, code: Const.ErrorCode.Unknown.rawValue, userInfo: nil)
-                        result = Result.failure(error)
+                        let error = NSError(
+                            domain: Const.errorDomain,
+                            code: Const.ErrorCode.Unknown.rawValue,
+                            userInfo: nil)
+                        result = ResultType(error: error)
                     }
                 }
                 
                 completion(result)
-        }
+            }
     }
     
 }

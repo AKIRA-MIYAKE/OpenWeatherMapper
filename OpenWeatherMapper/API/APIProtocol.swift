@@ -11,8 +11,8 @@ import Result
 
 protocol APIProtocol {
     
-    typealias Value
+    typealias ResultType
     
-    func get(#coordinate: Coordinate, _ completion: Result<Value, NSError> -> Void)
+    func get(#parameters: [String: AnyObject], _ completion: ResultType -> Void)
     
 }
