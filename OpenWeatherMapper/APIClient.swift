@@ -148,8 +148,6 @@ public class APIClient {
             "lon": coordinate.longitude
         ]
         
-        forecastAPI.get(parameters: parameters, completion)
-        
         forecastAPI.get(parameters: parameters) { result in
             switch result {
             case .Success(let box):
