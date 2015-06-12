@@ -10,12 +10,16 @@ import Foundation
 
 public struct Temperature {
     
-    public enum Degree {
-        case Kelvin
-        case Celsius
-        case Fahrenheit
+    public enum Degree: String {
+        case Kelvin = "Kelvin"
+        case Celsius = "Celsius"
+        case Fahrenheit = "Fahrenheit"
         
-        func toString() -> String {
+        public func toString() -> String {
+            return self.rawValue
+        }
+        
+        public func toDisplayString() -> String {
             switch self {
             case .Kelvin:
                 return "K"
