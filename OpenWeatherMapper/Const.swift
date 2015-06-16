@@ -13,6 +13,7 @@ struct Const {
     static let baseURLString = "http://api.openweathermap.org/data/2.5/"
     static let weatherAPIPath = "weather"
     static let forecastAPIPath = "forecast"
+    static let dailyForecastAPIPath = "forecast/daily"
     
     static let errorDomain = "com.dream-of-electric-cat.OpenWeatherMapper"
     

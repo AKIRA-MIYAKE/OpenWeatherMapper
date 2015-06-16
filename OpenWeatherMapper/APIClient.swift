@@ -17,16 +17,18 @@ public class APIClient {
     
     private let weatherAPI: WeatherAPI
     private let forecastAPI: ForecastAPI
+    private let dailyForecastAPI: DailyForecastAPI
     
     private let APPID: String
     
     
     // MARK: - Initialize
     
-    init(APPID: String, weatherAPI: WeatherAPI, forecastAPI: ForecastAPI) {
+    init(APPID: String, weatherAPI: WeatherAPI, forecastAPI: ForecastAPI, dailyForecastAPI: DailyForecastAPI) {
         self.APPID = APPID
         self.weatherAPI = weatherAPI
         self.forecastAPI = forecastAPI
+        self.dailyForecastAPI = dailyForecastAPI
     }
     
     
@@ -70,6 +72,7 @@ public class APIClient {
         
         weatherAPI.get(parameters: parameters, completion)
     }
+    
     
     /* Forecast */
 
@@ -160,6 +163,37 @@ public class APIClient {
                 completion(ForecastAPIResult(error: box.value))
             }
         }
+    }
+    
+    
+    /* Daily Forecast */
+    
+    public func getDailyForecast(#cityName: String, _ completion: DailyForecastAPIResult -> Void) {
+        let parameters: ParametersType = [
+            "APPID": APPID,
+            "q": cityName
+        ]
+        
+        dailyForecastAPI.get(parameters: parameters, completion)
+    }
+    
+    public func getDailyForecast(#cityId: Int, _ completion: DailyForecastAPIResult -> Void) {
+        let parameters: ParametersType = [
+            "APPID": APPID,
+            "id": cityId
+        ]
+        
+        dailyForecastAPI.get(parameters: parameters, completion)
+    }
+    
+    public func getDailyForecast(#coordinate: Coordinate, _ completion: DailyForecastAPIResult -> Void) {
+        let parameters: ParametersType = [
+            "APPID": APPID,
+            "lat": coordinate.latitude,
+            "lon": coordinate.longitude
+        ]
+        
+        dailyForecastAPI.get(parameters: parameters, completion)
     }
     
 }

@@ -31,7 +31,7 @@ class WeatherAPI: APIProtocol {
     }
     
     
-    // MARK: - Method
+    // MARK: - API protocol
     
     func get(#parameters: [String : AnyObject], _ completion: ResultType -> Void) {
         let URL = baseURL + apiPath

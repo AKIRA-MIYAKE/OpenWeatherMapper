@@ -1,8 +1,8 @@
 //
-//  ForecastAPI.swift
+//  DailyForecastAPI.swift
 //  OpenWeatherMapper
 //
-//  Created by MiyakeAkira on 2015/05/27.
+//  Created by MiyakeAkira on 2015/06/16.
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
@@ -10,20 +10,20 @@ import Foundation
 import Alamofire
 import Result
 
-class ForecastAPI: APIProtocol {
+public class DailyForecastAPI: APIProtocol {
     
-    typealias ResultType = ForecastAPIResult
+    typealias ResultType = DailyForecastAPIResult
     
     // MARK: - let
     
-    private let parser: ForecastAPIParser
+    private let parser: DailyForecastAPIParser
     private let baseURL: String
     private let apiPath: String
     
     
     // MARK: - Initialize
     
-    init(parser: ForecastAPIParser, baseURL: String, apiPath: String) {
+    init(parser: DailyForecastAPIParser, baseURL: String, apiPath: String) {
         self.parser = parser
         
         self.baseURL = baseURL
