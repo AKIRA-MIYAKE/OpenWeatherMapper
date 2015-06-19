@@ -33,7 +33,7 @@
 		A6EF25271B1605FF00E51359 /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF25261B1605FF00E51359 /* APIProtocol.swift */; };
 		A6EF25291B16068300E51359 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF25281B16068300E51359 /* WeatherAPI.swift */; };
 		A6EF252B1B1606FD00E51359 /* ForecastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF252A1B1606FD00E51359 /* ForecastAPI.swift */; };
-		A6EF252F1B16079700E51359 /* OpenWeatherMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF252E1B16079700E51359 /* OpenWeatherMapper.swift */; };
+		A6EF252F1B16079700E51359 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF252E1B16079700E51359 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,7 @@
 		A6EF25261B1605FF00E51359 /* APIProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
 		A6EF25281B16068300E51359 /* WeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		A6EF252A1B1606FD00E51359 /* ForecastAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastAPI.swift; sourceTree = "<group>"; };
-		A6EF252E1B16079700E51359 /* OpenWeatherMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapper.swift; sourceTree = "<group>"; };
+		A6EF252E1B16079700E51359 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 			children = (
 				A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */,
 				A6111E1B1B1F250100FA33D9 /* Const.swift */,
-				A6EF252E1B16079700E51359 /* OpenWeatherMapper.swift */,
+				A6EF252E1B16079700E51359 /* Service.swift */,
 				A6181D801B2085B800D69048 /* APIClient.swift */,
 				A6EF25071B16021600E51359 /* API */,
 				A6EF250C1B16024B00E51359 /* Parser */,
@@ -345,7 +345,7 @@
 				A676730D1B3057CD00731E9B /* DailyForecastAPIParser.swift in Sources */,
 				A6EF25211B16045D00E51359 /* Condition.swift in Sources */,
 				A6EF250E1B16026400E51359 /* ParserProtocol.swift in Sources */,
-				A6EF252F1B16079700E51359 /* OpenWeatherMapper.swift in Sources */,
+				A6EF252F1B16079700E51359 /* Service.swift in Sources */,
 				A6EF25271B1605FF00E51359 /* APIProtocol.swift in Sources */,
 				A6EF251B1B16044200E51359 /* Coordinate.swift in Sources */,
 				A67673071B30561500731E9B /* DailyForecastAPIResult.swift in Sources */,
