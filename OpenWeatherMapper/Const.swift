@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct Const {
+public struct Const {
     
-    static let baseURLString = "http://api.openweathermap.org/data/2.5/"
-    static let weatherAPIPath = "weather"
-    static let forecastAPIPath = "forecast"
-    static let dailyForecastAPIPath = "forecast/daily"
+    public static let baseURLString = "http://api.openweathermap.org/data/2.5/"
+    public static let weatherAPIPath = "weather"
+    public static let forecastAPIPath = "forecast"
+    public static let dailyForecastAPIPath = "forecast/daily"
     
-    static let errorDomain = "com.dream-of-electric-cat.OpenWeatherMapper"
+    public static let errorDomain = "com.dream-of-electric-cat.OpenWeatherMapper"
     
-    enum ErrorCode: Int {
+    public enum ErrorCode: Int {
         case Unknown = 0
         case ParseError
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class OpenWeatherMapper {
+public class Service {
     
     public static var baseURL = Const.baseURLString
     public static var weatherAPIPath = Const.weatherAPIPath
