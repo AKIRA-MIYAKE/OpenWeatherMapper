@@ -232,7 +232,6 @@
 				A6EF24E51B16012A00E51359 /* Frameworks */,
 				A6EF24E61B16012A00E51359 /* Headers */,
 				A6EF24E71B16012A00E51359 /* Resources */,
-				A6EF25171B1602D500E51359 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -312,26 +311,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A6EF25171B1602D500E51359 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Box.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/usr/local/bin/carthage copy-frameworks";
-			shellScript = "";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A6EF24E41B16012A00E51359 /* Sources */ = {
