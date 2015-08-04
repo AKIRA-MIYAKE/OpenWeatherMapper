@@ -10,10 +10,4 @@ import Foundation
 
 public struct Weather {
     
-    public let condition: Condition
-    public let temperature: Temperature
-    public let place: Place
-    public let coordinate: Coordinate
-    public let date: NSDate
-    
 }

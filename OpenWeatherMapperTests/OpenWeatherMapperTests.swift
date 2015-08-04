@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
-import UIKit
 import XCTest
+import OpenWeatherMapper
 
 class OpenWeatherMapperTests: XCTestCase {
     
@@ -19,6 +19,28 @@ class OpenWeatherMapperTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func testGetWeather() {
+        let expectation = expectationWithDescription("Get weather")
+        
+        let client = Client(APPID: "")
+        client.getWeather(["q": "Toky"]) { result in
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
+    func testGetForecast() {
+        let expectation = expectationWithDescription("Get forecast")
+        
+        let client = Client(APPID: "")
+        client.getForecast(["q": "Tokyo"]) { result in
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(5.0, handler: nil)
     }
     
 }
