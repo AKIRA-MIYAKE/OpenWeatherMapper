@@ -25,8 +25,13 @@ class OpenWeatherMapperTests: XCTestCase {
         let expectation = expectationWithDescription("Get weather")
         
         let client = Client(APPID: "")
-        client.getWeather(["q": "Toky"]) { result in
-            expectation.fulfill()
+        client.getWeather(["q": "Tokyo"]) { result in
+            switch result {
+            case .Success(let box):
+                expectation.fulfill()
+            case .Failure(let box):
+                break
+            }
         }
         
         waitForExpectationsWithTimeout(5.0, handler: nil)
@@ -37,7 +42,28 @@ class OpenWeatherMapperTests: XCTestCase {
         
         let client = Client(APPID: "")
         client.getForecast(["q": "Tokyo"]) { result in
-            expectation.fulfill()
+            switch result {
+            case .Success(let box):
+                expectation.fulfill()
+            case .Failure(let box):
+                break
+            }
+        }
+        
+        waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
+    func testGetDailyForecast() {
+        let expectation = expectationWithDescription("Get daily forecast")
+        
+        let client = Client(APPID: "")
+        client.getDailyForecast(["q": "Tokyo", "cnt": 16]) { result in
+            switch result {
+            case .Success(let box):
+                expectation.fulfill()
+            case .Failure(let box):
+                break
+            }
         }
         
         waitForExpectationsWithTimeout(5.0, handler: nil)
