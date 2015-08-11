@@ -2,11 +2,9 @@
 //  Coordinate.swift
 //  OpenWeatherMapper
 //
-//  Created by MiyakeAkira on 2015/05/27.
+//  Created by MiyakeAkira on 2015/08/09.
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
-
-import Foundation
 
 public struct Coordinate {
     

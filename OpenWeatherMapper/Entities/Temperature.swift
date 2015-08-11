@@ -2,21 +2,26 @@
 //  Temperature.swift
 //  OpenWeatherMapper
 //
-//  Created by MiyakeAkira on 2015/05/27.
+//  Created by MiyakeAkira on 2015/08/10.
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
-import Foundation
-
 public struct Temperature {
     
-    public enum Degree: String {
-        case Kelvin = "Kelvin"
-        case Celsius = "Celsius"
-        case Fahrenheit = "Fahrenheit"
+    public enum Degree {
+        case Kelvin
+        case Celsius
+        case Fahrenheit
         
         public func toString() -> String {
-            return self.rawValue
+            switch self {
+            case .Kelvin:
+                return "Kelvin"
+            case .Celsius:
+                return "Celsius"
+            case .Fahrenheit:
+                return "Fahrenheit"
+            }
         }
         
         public func toDisplayString() -> String {
@@ -32,29 +37,36 @@ public struct Temperature {
     }
     
     
-    public let kelvin: Double
-    public let celsius: Double
-    public let fahrenheit: Double
+    // MARK: - let
     
-    public init(kelvin: Double) {
-        self.kelvin = kelvin
-        
-        self.celsius = kelvin - 273.15
-        self.fahrenheit = kelvin * 9 / 5 - 459.67
+    private let rawValue: Double
+    
+    
+    // MARK: - Initialize
+    
+    public init(_ value: Double, degree: Degree) {
+        switch degree {
+        case .Kelvin:
+            self.rawValue = value
+        case .Celsius:
+            self.rawValue = value + 273.15
+        case .Fahrenheit:
+            self.rawValue = value * 5 / 9 + 459.67
+        }
     }
     
-    public init(celsius: Double) {
-        self.celsius = celsius
-        
-        self.kelvin = celsius + 273.15
-        self.fahrenheit = celsius * 9 / 5 + 32
-    }
     
-    public init(fahrenheit: Double) {
-        self.fahrenheit = fahrenheit
-        
-        self.kelvin = fahrenheit * 5 / 9 + 459.67
-        self.celsius = fahrenheit * 5 / 9 - 32
+    // MARK: - Method
+    
+    public func get(#degree: Degree) -> Double {
+        switch degree {
+        case .Kelvin:
+            return rawValue
+        case .Celsius:
+            return rawValue - 273.15
+        case .Fahrenheit:
+            return rawValue * 9 / 5 - 459.67
+        }
     }
     
 }
