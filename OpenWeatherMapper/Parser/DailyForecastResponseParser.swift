@@ -51,16 +51,18 @@ public class DailyForecastResponseParser {
                     }
                     
                     
-                    let temperature: (max: Temperature, min: Temperature)?
-                    if let max = item["temp"]["max"].double,
-                        let min = item["temp"]["min"].double
-                    {
-                        temperature = (
-                            max: Temperature(max, degree: TemperatureDegree.Kelvin),
-                            min: Temperature(min, degree: TemperatureDegree.Kelvin)
-                        )
+                    let temperatureMax: Temperature?
+                    if let tempMax = item["temp"]["max"].double {
+                        temperatureMax = Temperature(tempMax, degree: .Kelvin)
                     } else {
-                        temperature = nil
+                        temperatureMax = nil
+                    }
+                    
+                    let temperatureMin: Temperature?
+                    if let tempMin = item["temp"]["min"].double {
+                        temperatureMin = Temperature(tempMin, degree: .Kelvin)
+                    } else {
+                        temperatureMin = nil
                     }
                     
                     
@@ -73,12 +75,14 @@ public class DailyForecastResponseParser {
                     
                     
                     if let condition = condition,
-                        let temperature = temperature,
+                        let temperatureMax = temperatureMax,
+                        let temperatureMin = temperatureMin,
                         let date = date
                     {
                         let weather = Weather(
                             condition: condition,
-                            temperature: temperature,
+                            temperatureMax: temperatureMax,
+                            temperatureMin: temperatureMin,
                             city: city,
                             coordinate: coordinate,
                             date: date)

@@ -11,21 +11,39 @@ import Foundation
 
 public struct Weather {
     
+    // MARK: - let
+    
     public let condition: Condition
-    public let temperature: (max: Temperature, min: Temperature)
+    public let temperatureMax: Temperature
+    public let temperatureMin: Temperature
     public let city: City
     public let coordinate: Coordinate
     public let date: NSDate
     
-    internal init(
+    
+    // MARK: - Variables
+    
+    public var temperature: Temperature {
+        get {
+            let value = (temperatureMax.get(degree: .Kelvin) + temperatureMin.get(degree: .Kelvin)) / 2
+            return Temperature(value, degree: .Kelvin)
+        }
+    }
+    
+    
+    // MARK: - Initialize
+    
+    public init(
         condition: Condition,
-        temperature: (max: Temperature, min: Temperature),
+        temperatureMax: Temperature,
+        temperatureMin: Temperature,
         city: City,
         coordinate: Coordinate,
         date: NSDate)
     {
         self.condition = condition
-        self.temperature = temperature
+        self.temperatureMax = temperatureMax
+        self.temperatureMin = temperatureMin
         self.city = city
         self.coordinate = coordinate
         self.date = date

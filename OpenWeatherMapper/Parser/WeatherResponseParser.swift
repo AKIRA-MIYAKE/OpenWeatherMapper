@@ -43,16 +43,18 @@ public class WeatherResponseParser {
         }
         
         
-        let temperature: (max: Temperature, min: Temperature)?
-        if let max = json["main"]["temp_max"].double,
-            let min = json["main"]["temp_min"].double
-        {
-            temperature = (
-                max: Temperature(max, degree: TemperatureDegree.Kelvin),
-                min: Temperature(min, degree: TemperatureDegree.Kelvin)
-            )
+        let temperatureMax: Temperature?
+        if let tempMax = json["main"]["temp_max"].double {
+            temperatureMax = Temperature(tempMax, degree: .Kelvin)
         } else {
-            temperature = nil
+            temperatureMax = nil
+        }
+        
+        let temperatureMin: Temperature?
+        if let tempMin = json["main"]["temp_max"].double {
+            temperatureMin = Temperature(tempMin, degree: .Kelvin)
+        } else {
+            temperatureMin = nil
         }
         
         
@@ -65,14 +67,16 @@ public class WeatherResponseParser {
         
         
         if let condition = conditon,
-            let temperature = temperature,
+            let temperatureMax = temperatureMax,
+            let temperatureMin = temperatureMin,
             let city = city,
             let coordinate = coordinate,
             let date = date
         {
             let weather = Weather(
                 condition: condition,
-                temperature: temperature,
+                temperatureMax: temperatureMax,
+                temperatureMin: temperatureMin,
                 city: city, coordinate:
                 coordinate, date: date)
             return GetWeatherResult.success(weather)

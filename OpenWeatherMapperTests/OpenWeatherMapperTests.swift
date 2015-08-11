@@ -28,6 +28,25 @@ class OpenWeatherMapperTests: XCTestCase {
         client.getWeather(["q": "Tokyo"]) { result in
             switch result {
             case .Success(let box):
+                println(box.value.condition.main.toString())
+                expectation.fulfill()
+            case .Failure(let box):
+                break
+            }
+        }
+        
+        waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
+    func testGetWeatherWithCoordinate() {
+        let expectation = expectationWithDescription("Get weather")
+        
+        let client = Client(APPID: "")
+        let coord = Coordinate(latitude: 35, longitude: 139)
+        client.getWeather(coordinate: coord) { result in
+            switch result {
+            case .Success(let box):
+                println(box.value.condition.main.toString())
                 expectation.fulfill()
             case .Failure(let box):
                 break
@@ -44,7 +63,30 @@ class OpenWeatherMapperTests: XCTestCase {
         client.getForecast(["q": "Tokyo"]) { result in
             switch result {
             case .Success(let box):
-                expectation.fulfill()
+                if box.value.count > 0 {
+                    println(box.value[0].condition.main.toString())
+                    expectation.fulfill()
+                }
+            case .Failure(let box):
+                break
+            }
+        }
+        
+        waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
+    func testGetForecastWithCoordinate() {
+        let expectation = expectationWithDescription("Get forecast")
+        
+        let client = Client(APPID: "")
+        let coord = Coordinate(latitude: 35, longitude: 139)
+        client.getForecast(coordinate: coord) { result in
+            switch result {
+            case .Success(let box):
+                if box.value.count > 0 {
+                    println(box.value[0].condition.main.toString())
+                    expectation.fulfill()
+                }
             case .Failure(let box):
                 break
             }
@@ -60,7 +102,30 @@ class OpenWeatherMapperTests: XCTestCase {
         client.getDailyForecast(["q": "Tokyo", "cnt": 16]) { result in
             switch result {
             case .Success(let box):
-                expectation.fulfill()
+                if box.value.count > 0 {
+                    println(box.value[0].condition.main.toString())
+                    expectation.fulfill()
+                }
+            case .Failure(let box):
+                break
+            }
+        }
+        
+        waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
+    func testGetDailyForecastWithCoordinate() {
+        let expectation = expectationWithDescription("Get daily forecast")
+        
+        let client = Client(APPID: "")
+        let coord = Coordinate(latitude: 35, longitude: 139)
+        client.getDailyForecast(coordinate: coord, count: 16) { result in
+            switch result {
+            case .Success(let box):
+                if box.value.count > 0 {
+                    println(box.value[0].condition.main.toString())
+                    expectation.fulfill()
+                }
             case .Failure(let box):
                 break
             }

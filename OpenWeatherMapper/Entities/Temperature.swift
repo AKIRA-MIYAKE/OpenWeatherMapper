@@ -6,37 +6,36 @@
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
-public enum TemperatureDegree {
-    
-    case Kelvin
-    case Celsius
-    case Fahrenheit
-    
-    public func toString() -> String {
-        switch self {
-        case .Kelvin:
-            return "Kelvin"
-        case .Celsius:
-            return "Celsius"
-        case .Fahrenheit:
-            return "Fahrenheit"
-        }
-    }
-    
-    public func toDisplayString() -> String {
-        switch self {
-        case .Kelvin:
-            return "K"
-        case .Celsius:
-            return "°"
-        case .Fahrenheit:
-            return "°"
-        }
-    }
-    
-}
-
 public struct Temperature {
+    
+    public enum Degree {
+        case Kelvin
+        case Celsius
+        case Fahrenheit
+        
+        public func toString() -> String {
+            switch self {
+            case .Kelvin:
+                return "Kelvin"
+            case .Celsius:
+                return "Celsius"
+            case .Fahrenheit:
+                return "Fahrenheit"
+            }
+        }
+        
+        public func toDisplayString() -> String {
+            switch self {
+            case .Kelvin:
+                return "K"
+            case .Celsius:
+                return "°"
+            case .Fahrenheit:
+                return "°"
+            }
+        }
+    }
+    
     
     // MARK: - let
     
@@ -45,7 +44,7 @@ public struct Temperature {
     
     // MARK: - Initialize
     
-    public init(_ value: Double, degree: TemperatureDegree) {
+    public init(_ value: Double, degree: Degree) {
         switch degree {
         case .Kelvin:
             self.rawValue = value
@@ -59,7 +58,7 @@ public struct Temperature {
     
     // MARK: - Method
     
-    public func get(#degree: TemperatureDegree) -> Double {
+    public func get(#degree: Degree) -> Double {
         switch degree {
         case .Kelvin:
             return rawValue
