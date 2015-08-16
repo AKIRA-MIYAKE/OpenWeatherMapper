@@ -92,16 +92,16 @@ public class ForecastResponseParser {
                     
                 }
                 
-                return GetForecastResult.success(weathers)
+                return GetForecastResult.Success(weathers)
                 
             } else {
                 let error = NSError(domain: ErrorDomain, code: ErrorCode.ParseError.rawValue, userInfo: nil)
-                return GetForecastResult.failure(error)
+                return GetForecastResult.Failure(error)
             }
             
         } else {
             let error = NSError(domain: ErrorDomain, code: ErrorCode.ParseError.rawValue, userInfo: nil)
-            return GetForecastResult.failure(error)
+            return GetForecastResult.Failure(error)
         }
     }
     

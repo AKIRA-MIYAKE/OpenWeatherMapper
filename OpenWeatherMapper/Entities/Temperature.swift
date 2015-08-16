@@ -58,7 +58,7 @@ public struct Temperature {
     
     // MARK: - Method
     
-    public func get(#degree: Degree) -> Double {
+    public func get(degree degree: Degree) -> Double {
         switch degree {
         case .Kelvin:
             return rawValue

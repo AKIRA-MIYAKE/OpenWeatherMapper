@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A63B61591B71057C00558F8C /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63B61581B71057C00558F8C /* Client.swift */; };
+		A6C393251B804C7B0008BA69 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C393241B804C7B0008BA69 /* Results.swift */; };
 		A6EF24EF1B16012A00E51359 /* OpenWeatherMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6EF24F51B16012A00E51359 /* OpenWeatherMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF24E91B16012A00E51359 /* OpenWeatherMapper.framework */; };
 		A6EF24FC1B16012A00E51359 /* OpenWeatherMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF24FB1B16012A00E51359 /* OpenWeatherMapperTests.swift */; };
 		A6EF25131B1602CD00E51359 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF250F1B1602CD00E51359 /* Alamofire.framework */; };
-		A6EF25141B1602CD00E51359 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF25101B1602CD00E51359 /* Box.framework */; };
 		A6EF25151B1602CD00E51359 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF25111B1602CD00E51359 /* Result.framework */; };
 		A6EF25161B1602CD00E51359 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF25121B1602CD00E51359 /* SwiftyJSON.framework */; };
 		A6EF251F1B16045300E51359 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF251E1B16045300E51359 /* Weather.swift */; };
@@ -37,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		A63B61581B71057C00558F8C /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		A6C393241B804C7B0008BA69 /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		A6EF24E91B16012A00E51359 /* OpenWeatherMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWeatherMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6EF24ED1B16012A00E51359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenWeatherMapper.h; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		A6EF24FA1B16012A00E51359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6EF24FB1B16012A00E51359 /* OpenWeatherMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapperTests.swift; sourceTree = "<group>"; };
 		A6EF250F1B1602CD00E51359 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		A6EF25101B1602CD00E51359 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
 		A6EF25111B1602CD00E51359 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		A6EF25121B1602CD00E51359 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		A6EF251E1B16045300E51359 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -63,7 +63,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6EF25131B1602CD00E51359 /* Alamofire.framework in Frameworks */,
-				A6EF25141B1602CD00E51359 /* Box.framework in Frameworks */,
 				A6EF25151B1602CD00E51359 /* Result.framework in Frameworks */,
 				A6EF25161B1602CD00E51359 /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -84,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				A6EF250F1B1602CD00E51359 /* Alamofire.framework */,
-				A6EF25101B1602CD00E51359 /* Box.framework */,
 				A6EF25111B1602CD00E51359 /* Result.framework */,
 				A6EF25121B1602CD00E51359 /* SwiftyJSON.framework */,
 				A6EF24EB1B16012A00E51359 /* OpenWeatherMapper */,
@@ -107,6 +105,7 @@
 			children = (
 				A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */,
 				A63B61581B71057C00558F8C /* Client.swift */,
+				A6C393241B804C7B0008BA69 /* Results.swift */,
 				A6FD38161B78DA7300F847D0 /* Parsers */,
 				A6EF25051B1601F300E51359 /* Entities */,
 				A6EF24EC1B16012A00E51359 /* Supporting Files */,
@@ -219,7 +218,9 @@
 		A6EF24E01B16012A00E51359 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Miyake Akira";
 				TargetAttributes = {
 					A6EF24E81B16012A00E51359 = {
@@ -273,7 +274,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Box.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
@@ -294,6 +294,7 @@
 				A63B61591B71057C00558F8C /* Client.swift in Sources */,
 				A6FD381C1B78E08600F847D0 /* ForecastResponseParser.swift in Sources */,
 				A6FD38151B78CAD500F847D0 /* Condition.swift in Sources */,
+				A6C393251B804C7B0008BA69 /* Results.swift in Sources */,
 				A6EF251F1B16045300E51359 /* Weather.swift in Sources */,
 				A6FD38111B78C5EB00F847D0 /* City.swift in Sources */,
 				A6FD38131B78C72800F847D0 /* Temperature.swift in Sources */,
@@ -343,6 +344,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -358,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -400,7 +402,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -426,6 +428,7 @@
 				INFOPLIST_FILE = OpenWeatherMapper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -448,6 +451,7 @@
 				INFOPLIST_FILE = OpenWeatherMapper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -456,16 +460,13 @@
 		A6EF25031B16012A00E51359 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = OpenWeatherMapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -473,12 +474,9 @@
 		A6EF25041B16012A00E51359 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = OpenWeatherMapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

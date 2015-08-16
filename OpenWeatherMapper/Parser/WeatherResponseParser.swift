@@ -79,10 +79,10 @@ public class WeatherResponseParser {
                 temperatureMin: temperatureMin,
                 city: city, coordinate:
                 coordinate, date: date)
-            return GetWeatherResult.success(weather)
+            return GetWeatherResult.Success(weather)
         } else {
             let error = NSError(domain: ErrorDomain, code: ErrorCode.ParseError.rawValue, userInfo: nil)
-            return GetWeatherResult.failure(error)
+            return GetWeatherResult.Failure(error)
         }
     }
     
