@@ -16,21 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A6EF24E81B16012A00E51359"
                BuildableName = "OpenWeatherMapper.framework"
-               BlueprintName = "OpenWeatherMapper"
-               ReferencedContainer = "container:OpenWeatherMapper.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A6EF24F31B16012A00E51359"
-               BuildableName = "OpenWeatherMapperTests.xctest"
-               BlueprintName = "OpenWeatherMapperTests"
+               BlueprintName = "OpenWeatherMapper-iOS"
                ReferencedContainer = "container:OpenWeatherMapper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -58,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6EF24E81B16012A00E51359"
             BuildableName = "OpenWeatherMapper.framework"
-            BlueprintName = "OpenWeatherMapper"
+            BlueprintName = "OpenWeatherMapper-iOS"
             ReferencedContainer = "container:OpenWeatherMapper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6EF24E81B16012A00E51359"
             BuildableName = "OpenWeatherMapper.framework"
-            BlueprintName = "OpenWeatherMapper"
+            BlueprintName = "OpenWeatherMapper-iOS"
             ReferencedContainer = "container:OpenWeatherMapper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -98,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6EF24E81B16012A00E51359"
             BuildableName = "OpenWeatherMapper.framework"
-            BlueprintName = "OpenWeatherMapper"
+            BlueprintName = "OpenWeatherMapper-iOS"
             ReferencedContainer = "container:OpenWeatherMapper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

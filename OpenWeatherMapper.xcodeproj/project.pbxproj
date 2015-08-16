@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A63B61591B71057C00558F8C /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63B61581B71057C00558F8C /* Client.swift */; };
+		A6C17C471B80D532006216E9 /* OpenWeatherMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6C17C4B1B80D554006216E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C17C481B80D554006216E9 /* Alamofire.framework */; };
+		A6C17C4C1B80D554006216E9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C17C491B80D554006216E9 /* Result.framework */; };
+		A6C17C4D1B80D554006216E9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C17C4A1B80D554006216E9 /* SwiftyJSON.framework */; };
 		A6C393251B804C7B0008BA69 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C393241B804C7B0008BA69 /* Results.swift */; };
 		A6EF24EF1B16012A00E51359 /* OpenWeatherMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6EF24F51B16012A00E51359 /* OpenWeatherMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF24E91B16012A00E51359 /* OpenWeatherMapper.framework */; };
@@ -37,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		A63B61581B71057C00558F8C /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		A6C17C3F1B80D363006216E9 /* OpenWeatherMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWeatherMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6C17C481B80D554006216E9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/watchOS/Alamofire.framework; sourceTree = "<group>"; };
+		A6C17C491B80D554006216E9 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/watchOS/Result.framework; sourceTree = "<group>"; };
+		A6C17C4A1B80D554006216E9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/watchOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		A6C393241B804C7B0008BA69 /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		A6EF24E91B16012A00E51359 /* OpenWeatherMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWeatherMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6EF24ED1B16012A00E51359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +66,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A6C17C3B1B80D363006216E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C17C4B1B80D554006216E9 /* Alamofire.framework in Frameworks */,
+				A6C17C4C1B80D554006216E9 /* Result.framework in Frameworks */,
+				A6C17C4D1B80D554006216E9 /* SwiftyJSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6EF24E51B16012A00E51359 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,6 +100,9 @@
 		A6EF24DF1B16012A00E51359 = {
 			isa = PBXGroup;
 			children = (
+				A6C17C481B80D554006216E9 /* Alamofire.framework */,
+				A6C17C491B80D554006216E9 /* Result.framework */,
+				A6C17C4A1B80D554006216E9 /* SwiftyJSON.framework */,
 				A6EF250F1B1602CD00E51359 /* Alamofire.framework */,
 				A6EF25111B1602CD00E51359 /* Result.framework */,
 				A6EF25121B1602CD00E51359 /* SwiftyJSON.framework */,
@@ -96,6 +117,7 @@
 			children = (
 				A6EF24E91B16012A00E51359 /* OpenWeatherMapper.framework */,
 				A6EF24F41B16012A00E51359 /* OpenWeatherMapperTests.xctest */,
+				A6C17C3F1B80D363006216E9 /* OpenWeatherMapper.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +186,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		A6C17C3C1B80D363006216E9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C17C471B80D532006216E9 /* OpenWeatherMapper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6EF24E61B16012A00E51359 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,9 +205,27 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A6EF24E81B16012A00E51359 /* OpenWeatherMapper */ = {
+		A6C17C3E1B80D363006216E9 /* OpenWeatherMapper-watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6EF24FF1B16012A00E51359 /* Build configuration list for PBXNativeTarget "OpenWeatherMapper" */;
+			buildConfigurationList = A6C17C441B80D363006216E9 /* Build configuration list for PBXNativeTarget "OpenWeatherMapper-watchOS" */;
+			buildPhases = (
+				A6C17C3A1B80D363006216E9 /* Sources */,
+				A6C17C3B1B80D363006216E9 /* Frameworks */,
+				A6C17C3C1B80D363006216E9 /* Headers */,
+				A6C17C3D1B80D363006216E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenWeatherMapper-watchOS";
+			productName = "OpenWeatherMapper-watchOS";
+			productReference = A6C17C3F1B80D363006216E9 /* OpenWeatherMapper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A6EF24E81B16012A00E51359 /* OpenWeatherMapper-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6EF24FF1B16012A00E51359 /* Build configuration list for PBXNativeTarget "OpenWeatherMapper-iOS" */;
 			buildPhases = (
 				A6EF24E41B16012A00E51359 /* Sources */,
 				A6EF24E51B16012A00E51359 /* Frameworks */,
@@ -188,7 +236,7 @@
 			);
 			dependencies = (
 			);
-			name = OpenWeatherMapper;
+			name = "OpenWeatherMapper-iOS";
 			productName = OpenWeatherMapper;
 			productReference = A6EF24E91B16012A00E51359 /* OpenWeatherMapper.framework */;
 			productType = "com.apple.product-type.framework";
@@ -223,6 +271,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Miyake Akira";
 				TargetAttributes = {
+					A6C17C3E1B80D363006216E9 = {
+						CreatedOnToolsVersion = 7.0;
+					};
 					A6EF24E81B16012A00E51359 = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
@@ -243,13 +294,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A6EF24E81B16012A00E51359 /* OpenWeatherMapper */,
+				A6EF24E81B16012A00E51359 /* OpenWeatherMapper-iOS */,
 				A6EF24F31B16012A00E51359 /* OpenWeatherMapperTests */,
+				A6C17C3E1B80D363006216E9 /* OpenWeatherMapper-watchOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A6C17C3D1B80D363006216E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6EF24E71B16012A00E51359 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,6 +345,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A6C17C3A1B80D363006216E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6EF24E41B16012A00E51359 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,12 +382,59 @@
 /* Begin PBXTargetDependency section */
 		A6EF24F71B16012A00E51359 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A6EF24E81B16012A00E51359 /* OpenWeatherMapper */;
+			target = A6EF24E81B16012A00E51359 /* OpenWeatherMapper-iOS */;
 			targetProxy = A6EF24F61B16012A00E51359 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A6C17C451B80D363006216E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = OpenWeatherMapper/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.OpenWeatherMapper-watchOS";
+				PRODUCT_NAME = OpenWeatherMapper;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		A6C17C461B80D363006216E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = OpenWeatherMapper/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.OpenWeatherMapper-watchOS";
+				PRODUCT_NAME = OpenWeatherMapper;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		A6EF24FD1B16012A00E51359 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -429,9 +542,10 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OpenWeatherMapper;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -452,8 +566,9 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-of-electric-cat.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OpenWeatherMapper;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -484,6 +599,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A6C17C441B80D363006216E9 /* Build configuration list for PBXNativeTarget "OpenWeatherMapper-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6C17C451B80D363006216E9 /* Debug */,
+				A6C17C461B80D363006216E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A6EF24E31B16012A00E51359 /* Build configuration list for PBXProject "OpenWeatherMapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -493,7 +616,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6EF24FF1B16012A00E51359 /* Build configuration list for PBXNativeTarget "OpenWeatherMapper" */ = {
+		A6EF24FF1B16012A00E51359 /* Build configuration list for PBXNativeTarget "OpenWeatherMapper-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6EF25001B16012A00E51359 /* Debug */,
