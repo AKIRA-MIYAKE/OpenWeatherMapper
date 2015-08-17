@@ -123,7 +123,7 @@ public class Manager {
 
         - returns: The new `Manager` instance.
     */
-    public init(
+    required public init(
         configuration: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration(),
         serverTrustPolicyManager: ServerTrustPolicyManager? = nil)
     {
