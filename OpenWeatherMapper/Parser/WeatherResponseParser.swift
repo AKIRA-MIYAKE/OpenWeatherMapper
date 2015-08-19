@@ -59,8 +59,9 @@ public class WeatherResponseParser {
         
         
         let conditon: Condition?
-        if let id = json["weather"][0]["id"].int, let icon = json["weather"][0]["icon"].string {
-            conditon = Condition(id: id, icon: icon)
+        if let id = json["weather"][0]["id"].int,
+            let description = json["weather"][0]["description"].string {
+            conditon = Condition(id: id, description: description)
         } else {
             conditon = nil
         }

@@ -28,7 +28,7 @@ class OpenWeatherMapperTests: XCTestCase {
         client.getWeather(["q": "Tokyo"]) { result in
             switch result {
             case .Success(let value):
-                print(value.condition.main.toString())
+                print(value.condition.description)
                 expectation.fulfill()
             case .Failure(let error):
                 print(error)
@@ -46,7 +46,7 @@ class OpenWeatherMapperTests: XCTestCase {
         client.getWeather(coordinate: coord) { result in
             switch result {
             case .Success(let value):
-                print(value.condition.main.toString())
+                print(value.condition.description)
                 expectation.fulfill()
             case .Failure(let error):
                 print(error)
@@ -64,7 +64,7 @@ class OpenWeatherMapperTests: XCTestCase {
             switch result {
             case .Success(let value):
                 if value.count > 0 {
-                    print(value[0].condition.main.toString())
+                    print(value[0].condition.description)
                     expectation.fulfill()
                 }
             case .Failure(let error):
@@ -84,7 +84,7 @@ class OpenWeatherMapperTests: XCTestCase {
             switch result {
             case .Success(let value):
                 if value.count > 0 {
-                    print(value[0].condition.main.toString())
+                    print(value[0].condition.description)
                     expectation.fulfill()
                 }
             case .Failure(let error):
@@ -103,7 +103,7 @@ class OpenWeatherMapperTests: XCTestCase {
             switch result {
             case .Success(let value):
                 if value.count > 0 {
-                    print(value[0].condition.main.toString())
+                    print(value[0].condition.description)
                     expectation.fulfill()
                 }
             case .Failure(let error):
@@ -123,7 +123,7 @@ class OpenWeatherMapperTests: XCTestCase {
             switch result {
             case .Success(let value):
                 if value.count > 0 {
-                    print(value[0].condition.main.toString())
+                    print(value[0].condition.description)
                     expectation.fulfill()
                 }
             case .Failure(let error):

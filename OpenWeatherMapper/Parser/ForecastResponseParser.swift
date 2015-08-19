@@ -67,8 +67,9 @@ public class ForecastResponseParser {
                     
                     
                     let condition: Condition?
-                    if let id = item["weather"][0]["id"].int, icon = item["weather"][0]["icon"].string {
-                        condition = Condition(id: id, icon: icon)
+                    if let id = item["weather"][0]["id"].int,
+                        description = item["weather"][0]["description"].string {
+                        condition = Condition(id: id, description: description)
                     } else {
                         condition = nil
                     }
