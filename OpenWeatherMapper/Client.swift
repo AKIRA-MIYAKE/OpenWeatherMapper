@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 import Result
 
