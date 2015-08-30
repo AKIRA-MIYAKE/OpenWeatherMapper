@@ -58,7 +58,7 @@ public class Manager {
                 }
             }
 
-            return ",".join(components)
+            return components.joinWithSeparator(",")
         }()
 
         // User-Agent Header; see https://tools.ietf.org/html/rfc7231#section-5.5.3
@@ -123,7 +123,7 @@ public class Manager {
 
         - returns: The new `Manager` instance.
     */
-    required public init(
+    public init(
         configuration: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration(),
         serverTrustPolicyManager: ServerTrustPolicyManager? = nil)
     {

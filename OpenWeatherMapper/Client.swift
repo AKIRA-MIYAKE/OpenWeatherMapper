@@ -14,6 +14,7 @@ public let ErrorDomain = "con.dream-of-electric-cat.OpenWeatherMapper"
 
 public enum ErrorCode: Int {
     case Unknown
+    case NetworkError
     case ParseError
 }
 
@@ -110,7 +111,12 @@ public class Client {
                 case .Success(let value):
                     let result = self.weatherResponseParser.parse(value)
                     completion(result)
-                case .Failure(_, let error):
+                case .Failure(_, _):
+                    let error = NSError(
+                        domain: ErrorDomain,
+                        code: ErrorCode.NetworkError.rawValue,
+                        userInfo: nil)
+                    
                     let result = GetWeatherResult.Failure(error)
                     completion(result)
                 }
@@ -161,7 +167,12 @@ public class Client {
                 case .Success(let value):
                     let result = self.forecastResponseParser.parse(value)
                     completion(result)
-                case .Failure(_, let error):
+                case .Failure(_, _):
+                    let error = NSError(
+                        domain: ErrorDomain,
+                        code: ErrorCode.NetworkError.rawValue,
+                        userInfo: nil)
+                    
                     let result = GetForecastResult.Failure(error)
                     completion(result)
                 }
@@ -222,7 +233,12 @@ public class Client {
                 case .Success(let value):
                     let result = self.dailyForecastResponseParser.parse(value)
                     completion(result)
-                case .Failure(_, let error):
+                case .Failure(_, _):
+                    let error = NSError(
+                        domain: ErrorDomain,
+                        code: ErrorCode.NetworkError.rawValue,
+                        userInfo: nil)
+                    
                     let result = GetDailyForecastResult.Failure(error)
                     completion(result)
                 }
