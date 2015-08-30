@@ -82,7 +82,7 @@ public class WeatherResponseParser {
                 coordinate, date: date)
             return GetWeatherResult.Success(weather)
         } else {
-            let error = NSError(domain: ErrorDomain, code: ErrorCode.ParseError.rawValue, userInfo: nil)
+            let error = OpenWeatherMapperError.ParseError(data)
             return GetWeatherResult.Failure(error)
         }
     }

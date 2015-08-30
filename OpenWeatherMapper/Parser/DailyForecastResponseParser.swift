@@ -96,12 +96,12 @@ public class DailyForecastResponseParser {
                 return GetDailyForecastResult.Success(weathers)
                 
             } else {
-                let error = NSError(domain: ErrorDomain, code: ErrorCode.ParseError.rawValue, userInfo: nil)
+                let error = OpenWeatherMapperError.ParseError(data)
                 return GetDailyForecastResult.Failure(error)
             }
             
         } else {
-            let error = NSError(domain: ErrorDomain, code: ErrorCode.ParseError.rawValue, userInfo: nil)
+            let error = OpenWeatherMapperError.ParseError(data)
             return GetDailyForecastResult.Failure(error)
         }
     }

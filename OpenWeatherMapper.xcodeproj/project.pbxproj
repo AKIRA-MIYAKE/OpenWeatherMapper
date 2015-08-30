@@ -13,6 +13,7 @@
 		A6C17C4C1B80D554006216E9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C17C491B80D554006216E9 /* Result.framework */; };
 		A6C17C4D1B80D554006216E9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C17C4A1B80D554006216E9 /* SwiftyJSON.framework */; };
 		A6C393251B804C7B0008BA69 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C393241B804C7B0008BA69 /* Results.swift */; };
+		A6DFED291B932A7A00E6FF3D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFED281B932A7A00E6FF3D /* Error.swift */; settings = {ASSET_TAGS = (); }; };
 		A6EF24EF1B16012A00E51359 /* OpenWeatherMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6EF24F51B16012A00E51359 /* OpenWeatherMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF24E91B16012A00E51359 /* OpenWeatherMapper.framework */; };
 		A6EF24FC1B16012A00E51359 /* OpenWeatherMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EF24FB1B16012A00E51359 /* OpenWeatherMapperTests.swift */; };
@@ -46,6 +47,7 @@
 		A6C17C491B80D554006216E9 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/watchOS/Result.framework; sourceTree = "<group>"; };
 		A6C17C4A1B80D554006216E9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/watchOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		A6C393241B804C7B0008BA69 /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		A6DFED281B932A7A00E6FF3D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		A6EF24E91B16012A00E51359 /* OpenWeatherMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWeatherMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6EF24ED1B16012A00E51359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenWeatherMapper.h; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				A6EF24EE1B16012A00E51359 /* OpenWeatherMapper.h */,
 				A63B61581B71057C00558F8C /* Client.swift */,
 				A6C393241B804C7B0008BA69 /* Results.swift */,
+				A6DFED281B932A7A00E6FF3D /* Error.swift */,
 				A6FD38161B78DA7300F847D0 /* Parsers */,
 				A6EF25051B1601F300E51359 /* Entities */,
 				A6EF24EC1B16012A00E51359 /* Supporting Files */,
@@ -359,6 +362,7 @@
 				A6FD381A1B78DAC200F847D0 /* WeatherResponseParser.swift in Sources */,
 				A63B61591B71057C00558F8C /* Client.swift in Sources */,
 				A6FD381C1B78E08600F847D0 /* ForecastResponseParser.swift in Sources */,
+				A6DFED291B932A7A00E6FF3D /* Error.swift in Sources */,
 				A6FD38151B78CAD500F847D0 /* Condition.swift in Sources */,
 				A6C393251B804C7B0008BA69 /* Results.swift in Sources */,
 				A6EF251F1B16045300E51359 /* Weather.swift in Sources */,

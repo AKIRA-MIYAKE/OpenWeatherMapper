@@ -10,15 +10,6 @@ import Alamofire
 import Result
 
 
-public let ErrorDomain = "con.dream-of-electric-cat.OpenWeatherMapper"
-
-public enum ErrorCode: Int {
-    case Unknown
-    case NetworkError
-    case ParseError
-}
-
-
 public let BaseURL = "http://api.openweathermap.org/data/2.5/"
 
 public enum API: String {
@@ -112,11 +103,7 @@ public class Client {
                     let result = self.weatherResponseParser.parse(value)
                     completion(result)
                 case .Failure(_, _):
-                    let error = NSError(
-                        domain: ErrorDomain,
-                        code: ErrorCode.NetworkError.rawValue,
-                        userInfo: nil)
-                    
+                    let error = OpenWeatherMapperError.NetworkError
                     let result = GetWeatherResult.Failure(error)
                     completion(result)
                 }
@@ -168,11 +155,7 @@ public class Client {
                     let result = self.forecastResponseParser.parse(value)
                     completion(result)
                 case .Failure(_, _):
-                    let error = NSError(
-                        domain: ErrorDomain,
-                        code: ErrorCode.NetworkError.rawValue,
-                        userInfo: nil)
-                    
+                    let error = OpenWeatherMapperError.NetworkError
                     let result = GetForecastResult.Failure(error)
                     completion(result)
                 }
@@ -234,11 +217,7 @@ public class Client {
                     let result = self.dailyForecastResponseParser.parse(value)
                     completion(result)
                 case .Failure(_, _):
-                    let error = NSError(
-                        domain: ErrorDomain,
-                        code: ErrorCode.NetworkError.rawValue,
-                        userInfo: nil)
-                    
+                    let error = OpenWeatherMapperError.NetworkError
                     let result = GetDailyForecastResult.Failure(error)
                     completion(result)
                 }
