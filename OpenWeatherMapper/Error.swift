@@ -7,7 +7,7 @@
 //
 
 public enum OpenWeatherMapperError: ErrorType {
-    case Unknown
+    case UnknownError
     case NetworkError
     case ParseError(AnyObject)
 }
