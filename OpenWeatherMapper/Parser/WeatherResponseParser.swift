@@ -12,7 +12,7 @@ import Result
 
 public class WeatherResponseParser {
     
-    public func parse(data: AnyObject) -> GetWeatherResult {
+    public func parse(data: AnyObject) -> GettingWeatherResult {
         let json = JSON(data)
         
         
@@ -80,10 +80,10 @@ public class WeatherResponseParser {
                 temperatureMin: temperatureMin,
                 city: city, coordinate:
                 coordinate, date: date)
-            return GetWeatherResult.Success(weather)
+            return GettingWeatherResult.Success(weather)
         } else {
             let error = OpenWeatherMapperError.ParseError(data)
-            return GetWeatherResult.Failure(error)
+            return GettingWeatherResult.Failure(error)
         }
     }
     

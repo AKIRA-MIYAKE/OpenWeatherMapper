@@ -55,25 +55,25 @@ public class Client {
     
     // MARK: - Current weather data
     
-    public func getWeather(cityName cityName: String, _ completion: GetWeatherResult -> Void) {
+    public func getWeather(cityName cityName: String, _ completion: GettingWeatherResult -> Void) {
         let parameters: [String: AnyObject] = ["q": cityName]
         
         getWeather(parameters, completion)
     }
     
-    public func getWeather(cityName cityName: String, countryCode: String, _ completion: GetWeatherResult -> Void) {
+    public func getWeather(cityName cityName: String, countryCode: String, _ completion: GettingWeatherResult -> Void) {
         let parameters: [String: AnyObject] = ["q": "\(cityName),\(countryCode)"]
         
         getWeather(parameters, completion)
     }
     
-    public func getWeather(cityId cityId: Int, _ completion: GetWeatherResult -> Void) {
+    public func getWeather(cityId cityId: Int, _ completion: GettingWeatherResult -> Void) {
         let parameters: [String: AnyObject] = ["id": cityId]
         
         getWeather(parameters, completion)
     }
     
-    public func getWeather(coordinate coordinate: Coordinate, _ completion: GetWeatherResult -> Void) {
+    public func getWeather(coordinate coordinate: Coordinate, _ completion: GettingWeatherResult -> Void) {
         let parameters: [String: AnyObject] = [
             "lat": coordinate.latitude,
             "lon": coordinate.longitude
@@ -82,13 +82,13 @@ public class Client {
         getWeather(parameters, completion)
     }
     
-    public func getWeather(zipCode zipCode: String, countryCode: String, _ completion: GetWeatherResult -> Void) {
+    public func getWeather(zipCode zipCode: String, countryCode: String, _ completion: GettingWeatherResult -> Void) {
         let parameters: [String: AnyObject] = ["zip": "\(zipCode),\(countryCode)"]
         
         getWeather(parameters, completion)
     }
     
-    public func getWeather(parameters: [String: AnyObject], _ completion: GetWeatherResult -> Void) {
+    public func getWeather(parameters: [String: AnyObject], _ completion: GettingWeatherResult -> Void) {
         let urlString = "\(BaseURL)\(API.Weather.rawValue)"
         
         var _parameters: [String: AnyObject] = ["APPID": APPID]
@@ -104,7 +104,7 @@ public class Client {
                     completion(result)
                 case .Failure(_, _):
                     let error = OpenWeatherMapperError.NetworkError
-                    let result = GetWeatherResult.Failure(error)
+                    let result = GettingWeatherResult.Failure(error)
                     completion(result)
                 }
             }
@@ -113,25 +113,25 @@ public class Client {
     
     // MARK: - 5 day / 3 hour forecast
     
-    public func getForecast(cityName cityName: String, _ completion: GetForecastResult -> Void) {
+    public func getForecast(cityName cityName: String, _ completion: GettingForecastResult -> Void) {
         let parameters: [String: AnyObject] = ["q": cityName]
         
         getForecast(parameters, completion)
     }
     
-    public func getForecast(cityName cityName: String, countryCode: String, _ completion: GetForecastResult -> Void) {
+    public func getForecast(cityName cityName: String, countryCode: String, _ completion: GettingForecastResult -> Void) {
         let parameters: [String: AnyObject] = ["q": "\(cityName),\(countryCode)"]
         
         getForecast(parameters, completion)
     }
     
-    public func getForecast(cityId cityId: Int, _ completion: GetForecastResult -> Void) {
+    public func getForecast(cityId cityId: Int, _ completion: GettingForecastResult -> Void) {
         let parameters: [String: AnyObject] = ["id": cityId]
         
         getForecast(parameters, completion)
     }
     
-    public func getForecast(coordinate coordinate: Coordinate, _ completion: GetForecastResult -> Void) {
+    public func getForecast(coordinate coordinate: Coordinate, _ completion: GettingForecastResult -> Void) {
         let parameters: [String: AnyObject] = [
             "lat": coordinate.latitude,
             "lon": coordinate.longitude
@@ -140,7 +140,7 @@ public class Client {
         getForecast(parameters, completion)
     }
     
-    public func getForecast(parameters: [String: AnyObject], _ completion: GetForecastResult -> Void) {
+    public func getForecast(parameters: [String: AnyObject], _ completion: GettingForecastResult -> Void) {
         let urlString = "\(BaseURL)\(API.Forecast.rawValue)"
         
         var _parameters: [String: AnyObject] = ["APPID": APPID]
@@ -156,7 +156,7 @@ public class Client {
                     completion(result)
                 case .Failure(_, _):
                     let error = OpenWeatherMapperError.NetworkError
-                    let result = GetForecastResult.Failure(error)
+                    let result = GettingForecastResult.Failure(error)
                     completion(result)
                 }
         }
@@ -165,7 +165,7 @@ public class Client {
     
     // MARK: - 16 day / daily forecast
     
-    public func getDailyForecast(cityName cityName: String, count: Int, _ completion: GetDailyForecastResult -> Void) {
+    public func getDailyForecast(cityName cityName: String, count: Int, _ completion: GettingDailyForecastResult -> Void) {
         let parameters: [String: AnyObject] = [
             "q": cityName,
             "cnt": count
@@ -174,7 +174,7 @@ public class Client {
         getDailyForecast(parameters, completion)
     }
     
-    public func getDailyForecast(cityName cityName: String, coutnryCode: String, count: Int, _ completion: GetDailyForecastResult -> Void) {
+    public func getDailyForecast(cityName cityName: String, coutnryCode: String, count: Int, _ completion: GettingDailyForecastResult -> Void) {
         let parameters: [String: AnyObject] = [
             "q": "\(cityName),\(coutnryCode)",
             "cnt": count
@@ -183,7 +183,7 @@ public class Client {
         getDailyForecast(parameters, completion)
     }
     
-    public func getDailyForecast(cityId cityId: Int, count: Int, _ completion: GetDailyForecastResult -> Void) {
+    public func getDailyForecast(cityId cityId: Int, count: Int, _ completion: GettingDailyForecastResult -> Void) {
         let parameters: [String: AnyObject] = [
             "id": cityId,
             "cnt": count
@@ -192,7 +192,7 @@ public class Client {
         getDailyForecast(parameters, completion)
     }
     
-    public func getDailyForecast(coordinate coordinate: Coordinate, count: Int, _ completion: GetDailyForecastResult -> Void) {
+    public func getDailyForecast(coordinate coordinate: Coordinate, count: Int, _ completion: GettingDailyForecastResult -> Void) {
         let parameters: [String: AnyObject] = [
             "lat": coordinate.latitude,
             "lon": coordinate.longitude,
@@ -202,7 +202,7 @@ public class Client {
         getDailyForecast(parameters, completion)
     }
     
-    public func getDailyForecast(parameters: [String: AnyObject], _ completion: GetDailyForecastResult -> Void) {
+    public func getDailyForecast(parameters: [String: AnyObject], _ completion: GettingDailyForecastResult -> Void) {
         let urlString = "\(BaseURL)\(API.DailyForecast.rawValue)"
         
         var _parameters: [String: AnyObject] = ["APPID": APPID]
@@ -218,7 +218,7 @@ public class Client {
                     completion(result)
                 case .Failure(_, _):
                     let error = OpenWeatherMapperError.NetworkError
-                    let result = GetDailyForecastResult.Failure(error)
+                    let result = GettingDailyForecastResult.Failure(error)
                     completion(result)
                 }
         }

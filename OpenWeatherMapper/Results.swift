@@ -9,6 +9,6 @@
 import Result
 
 
-public typealias GetWeatherResult = Result<Weather, OpenWeatherMapperError>
-public typealias GetForecastResult = Result<[Weather], OpenWeatherMapperError>
-public typealias GetDailyForecastResult = Result<[Weather], OpenWeatherMapperError>
+public typealias GettingWeatherResult = Result<Weather, OpenWeatherMapperError>
+public typealias GettingForecastResult = Result<[Weather], OpenWeatherMapperError>
+public typealias GettingDailyForecastResult = Result<[Weather], OpenWeatherMapperError>

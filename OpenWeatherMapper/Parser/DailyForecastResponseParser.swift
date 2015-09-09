@@ -12,7 +12,7 @@ import Result
 
 public class DailyForecastResponseParser {
     
-    public func parse(data: AnyObject) -> GetDailyForecastResult {
+    public func parse(data: AnyObject) -> GettingDailyForecastResult {
         let json = JSON(data)
         
         
@@ -93,16 +93,16 @@ public class DailyForecastResponseParser {
                     
                 }
                 
-                return GetDailyForecastResult.Success(weathers)
+                return GettingDailyForecastResult.Success(weathers)
                 
             } else {
                 let error = OpenWeatherMapperError.ParseError(data)
-                return GetDailyForecastResult.Failure(error)
+                return GettingDailyForecastResult.Failure(error)
             }
             
         } else {
             let error = OpenWeatherMapperError.ParseError(data)
-            return GetDailyForecastResult.Failure(error)
+            return GettingDailyForecastResult.Failure(error)
         }
     }
     

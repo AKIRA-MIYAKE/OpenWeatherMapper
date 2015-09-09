@@ -12,7 +12,7 @@ import Result
 
 public class ForecastResponseParser {
     
-    public func parse(data: AnyObject) -> GetForecastResult {
+    public func parse(data: AnyObject) -> GettingForecastResult {
         let json = JSON(data)
         
         
@@ -93,16 +93,16 @@ public class ForecastResponseParser {
                     
                 }
                 
-                return GetForecastResult.Success(weathers)
+                return GettingForecastResult.Success(weathers)
                 
             } else {
                 let error = OpenWeatherMapperError.ParseError(data)
-                return GetForecastResult.Failure(error)
+                return GettingForecastResult.Failure(error)
             }
             
         } else {
             let error = OpenWeatherMapperError.ParseError(data)
-            return GetForecastResult.Failure(error)
+            return GettingForecastResult.Failure(error)
         }
     }
     
