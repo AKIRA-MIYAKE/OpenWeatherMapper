@@ -8,31 +8,7 @@
 
 public struct Condition {
     
-    public enum General {
-        case Unknown
-        case Clear
-        case Cloudy
-        case Rainy
-        case Snowy
-        
-        public func toString() -> String {
-            switch self {
-            case .Unknown:
-                return "Unknown"
-            case .Clear:
-                return "Clear"
-            case .Cloudy:
-                return "Cloudy"
-            case .Rainy:
-                return "Rainy"
-            case .Snowy:
-                return "Snowy"
-            }
-        }
-    }
-    
-    
-    public enum Main {
+    public enum Detail {
         case Unknown
         case ClearSky
         case FewClouds
@@ -44,28 +20,57 @@ public struct Condition {
         case Snow
         case Mist
         
-        public func toString() -> String {
-            switch self {
+        
+        public init(_ id: Int) {
+            if id >= 200 && id < 300 {
+                self = .Thunderstorm
+            } else if id >= 300 && id < 400 {
+                self = .ShowerRain
+            } else if id >= 500 && id < 510 {
+                self = .Rain
+            } else if id >= 510 && id < 520 {
+                self = .Snow
+            } else if id > 520 && id < 600 {
+                self = .ShowerRain
+            } else if id >= 600 && id < 700 {
+                self = .Snow
+            } else if id >= 700 && id < 800 {
+                self = .Mist
+            } else if id == 800 {
+                self = .ClearSky
+            } else if id == 801 {
+                self = .FewClouds
+            } else if id == 802 {
+                self = .ScatteredClouds
+            } else if id >= 803 && id < 900 {
+                self = .BrokenClouds
+            } else {
+                self = .Unknown
+            }
+        }
+        
+    }
+    
+    
+    public enum Overview {
+        case Unknow
+        case Clear
+        case Clowdy
+        case Rainy
+        case Snowy
+        
+        public init(_ detail: Detail) {
+            switch detail {
             case .Unknown:
-                return "Unknown"
-            case .ClearSky:
-                return "Clear Sky"
-            case .FewClouds:
-                return "Few Clouds"
-            case .ScatteredClouds:
-                return "Scattered Clouds"
-            case .BrokenClouds:
-                return "Broken Clouds"
-            case .ShowerRain:
-                return "Shower Rain"
-            case .Rain:
-                return "Rain"
-            case .Thunderstorm:
-                return "Thunderstorm"
+                self = .Unknow
+            case .ClearSky, .FewClouds:
+                self = .Clear
+            case .ScatteredClouds, .BrokenClouds:
+                self = .Clowdy
+            case .ShowerRain, .Rain, .Thunderstorm, .Mist:
+                self = .Rainy
             case .Snow:
-                return "Snow"
-            case .Mist:
-                return "Mist"
+                self = .Snowy
             }
         }
     }
@@ -74,46 +79,19 @@ public struct Condition {
     // MARK: - let
     
     public let id: Int
-    public let general: General
-    public let main: Main
+    public let overview: Overview
+    public let detail: Detail
+    public let description: String
     
     
     // MARK: - Initialize
     
-    internal init(id: Int, icon: String) {
+    public init(id: Int, description: String) {
         self.id = id
-        
-        if icon.hasPrefix("01") {
-            general = General.Clear
-            main = Main.ClearSky
-        } else if icon.hasPrefix("02") {
-            general = General.Clear
-            main = Main.FewClouds
-        } else if icon.hasPrefix("03") {
-            general = General.Cloudy
-            main = Main.ScatteredClouds
-        } else if icon.hasPrefix("04") {
-            general = General.Cloudy
-            main = Main.BrokenClouds
-        } else if icon.hasPrefix("09") {
-            general = General.Rainy
-            main = Main.ShowerRain
-        } else if icon.hasPrefix("10") {
-            general = General.Rainy
-            main = Main.Rain
-        } else if icon.hasPrefix("11") {
-            general = General.Rainy
-            main = Main.Thunderstorm
-        } else if icon.hasPrefix("13") {
-            general = General.Snowy
-            main = Main.Snow
-        } else if icon.hasPrefix("50") {
-            general = General.Rainy
-            main = Main.Mist
-        } else {
-            general = General.Unknown
-            main = Main.Unknown
-        }
+        let detail = Detail(id)
+        self.detail = detail
+        self.overview = Overview(detail)
+        self.description = description
     }
     
 }

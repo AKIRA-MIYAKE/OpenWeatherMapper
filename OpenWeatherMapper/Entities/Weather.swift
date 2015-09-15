@@ -6,9 +6,6 @@
 //  Copyright (c) 2015年 Miyake Akira. All rights reserved.
 //
 
-import Foundation
-
-
 public struct Weather {
     
     // MARK: - let

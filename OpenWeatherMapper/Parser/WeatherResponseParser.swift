@@ -12,7 +12,7 @@ import Result
 
 public class WeatherResponseParser {
     
-    public func parse(data: AnyObject) -> GetWeatherResult {
+    public func parse(data: AnyObject) -> GettingWeatherResult {
         let json = JSON(data)
         
         
@@ -59,8 +59,9 @@ public class WeatherResponseParser {
         
         
         let conditon: Condition?
-        if let id = json["weather"][0]["id"].int, let icon = json["weather"][0]["icon"].string {
-            conditon = Condition(id: id, icon: icon)
+        if let id = json["weather"][0]["id"].int,
+            let description = json["weather"][0]["description"].string {
+            conditon = Condition(id: id, description: description)
         } else {
             conditon = nil
         }
@@ -79,10 +80,10 @@ public class WeatherResponseParser {
                 temperatureMin: temperatureMin,
                 city: city, coordinate:
                 coordinate, date: date)
-            return GetWeatherResult.success(weather)
+            return GettingWeatherResult.Success(weather)
         } else {
-            let error = NSError(domain: ErrorDomain, code: ErrorCode.ParseError.rawValue, userInfo: nil)
-            return GetWeatherResult.failure(error)
+            let error = OpenWeatherMapperError.ParseError(data)
+            return GettingWeatherResult.Failure(error)
         }
     }
     

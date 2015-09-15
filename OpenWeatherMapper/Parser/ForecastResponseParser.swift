@@ -12,7 +12,7 @@ import Result
 
 public class ForecastResponseParser {
     
-    public func parse(data: AnyObject) -> GetForecastResult {
+    public func parse(data: AnyObject) -> GettingForecastResult {
         let json = JSON(data)
         
         
@@ -67,8 +67,9 @@ public class ForecastResponseParser {
                     
                     
                     let condition: Condition?
-                    if let id = item["weather"][0]["id"].int, icon = item["weather"][0]["icon"].string {
-                        condition = Condition(id: id, icon: icon)
+                    if let id = item["weather"][0]["id"].int,
+                        description = item["weather"][0]["description"].string {
+                        condition = Condition(id: id, description: description)
                     } else {
                         condition = nil
                     }
@@ -92,16 +93,16 @@ public class ForecastResponseParser {
                     
                 }
                 
-                return GetForecastResult.success(weathers)
+                return GettingForecastResult.Success(weathers)
                 
             } else {
-                let error = NSError(domain: ErrorDomain, code: ErrorCode.ParseError.rawValue, userInfo: nil)
-                return GetForecastResult.failure(error)
+                let error = OpenWeatherMapperError.ParseError(data)
+                return GettingForecastResult.Failure(error)
             }
             
         } else {
-            let error = NSError(domain: ErrorDomain, code: ErrorCode.ParseError.rawValue, userInfo: nil)
-            return GetForecastResult.failure(error)
+            let error = OpenWeatherMapperError.ParseError(data)
+            return GettingForecastResult.Failure(error)
         }
     }
     

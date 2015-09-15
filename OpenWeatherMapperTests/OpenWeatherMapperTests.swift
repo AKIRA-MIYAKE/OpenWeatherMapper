@@ -27,11 +27,11 @@ class OpenWeatherMapperTests: XCTestCase {
         let client = Client(APPID: "")
         client.getWeather(["q": "Tokyo"]) { result in
             switch result {
-            case .Success(let box):
-                println(box.value.condition.main.toString())
+            case .Success(let value):
+                print(value.condition.description)
                 expectation.fulfill()
-            case .Failure(let box):
-                break
+            case .Failure(let error):
+                print(error)
             }
         }
         
@@ -45,11 +45,11 @@ class OpenWeatherMapperTests: XCTestCase {
         let coord = Coordinate(latitude: 35, longitude: 139)
         client.getWeather(coordinate: coord) { result in
             switch result {
-            case .Success(let box):
-                println(box.value.condition.main.toString())
+            case .Success(let value):
+                print(value.condition.description)
                 expectation.fulfill()
-            case .Failure(let box):
-                break
+            case .Failure(let error):
+                print(error)
             }
         }
         
@@ -62,13 +62,13 @@ class OpenWeatherMapperTests: XCTestCase {
         let client = Client(APPID: "")
         client.getForecast(["q": "Tokyo"]) { result in
             switch result {
-            case .Success(let box):
-                if box.value.count > 0 {
-                    println(box.value[0].condition.main.toString())
+            case .Success(let value):
+                if value.count > 0 {
+                    print(value[0].condition.description)
                     expectation.fulfill()
                 }
-            case .Failure(let box):
-                break
+            case .Failure(let error):
+                print(error)
             }
         }
         
@@ -82,13 +82,13 @@ class OpenWeatherMapperTests: XCTestCase {
         let coord = Coordinate(latitude: 35, longitude: 139)
         client.getForecast(coordinate: coord) { result in
             switch result {
-            case .Success(let box):
-                if box.value.count > 0 {
-                    println(box.value[0].condition.main.toString())
+            case .Success(let value):
+                if value.count > 0 {
+                    print(value[0].condition.description)
                     expectation.fulfill()
                 }
-            case .Failure(let box):
-                break
+            case .Failure(let error):
+                print(error)
             }
         }
         
@@ -101,13 +101,13 @@ class OpenWeatherMapperTests: XCTestCase {
         let client = Client(APPID: "")
         client.getDailyForecast(["q": "Tokyo", "cnt": 16]) { result in
             switch result {
-            case .Success(let box):
-                if box.value.count > 0 {
-                    println(box.value[0].condition.main.toString())
+            case .Success(let value):
+                if value.count > 0 {
+                    print(value[0].condition.description)
                     expectation.fulfill()
                 }
-            case .Failure(let box):
-                break
+            case .Failure(let error):
+                print(error)
             }
         }
         
@@ -121,13 +121,13 @@ class OpenWeatherMapperTests: XCTestCase {
         let coord = Coordinate(latitude: 35, longitude: 139)
         client.getDailyForecast(coordinate: coord, count: 16) { result in
             switch result {
-            case .Success(let box):
-                if box.value.count > 0 {
-                    println(box.value[0].condition.main.toString())
+            case .Success(let value):
+                if value.count > 0 {
+                    print(value[0].condition.description)
                     expectation.fulfill()
                 }
-            case .Failure(let box):
-                break
+            case .Failure(let error):
+                print(error)
             }
         }
         
