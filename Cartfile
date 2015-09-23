@@ -1,3 +1,3 @@
-github "Alamofire/Alamofire" "2.0.0-beta.4"
-github "AKIRA-MIYAKE/SwiftyJSON" "add-watchOS"
+github "Alamofire/Alamofire" ~> 2.0.2
+github "SwiftyJSON/SwiftyJSON" ~> 2.3.0
 github "antitypical/Result" "0.6-beta.1"
