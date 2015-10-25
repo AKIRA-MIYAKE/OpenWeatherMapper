@@ -2,8 +2,8 @@
 //  Condition.swift
 //  OpenWeatherMapper
 //
-//  Created by MiyakeAkira on 2015/08/10.
-//  Copyright (c) 2015年 Miyake Akira. All rights reserved.
+//  Created by MiyakeAkira on 2015/10/27.
+//  Copyright © 2015年 Miyake Akira. All rights reserved.
 //
 
 public struct Condition {
@@ -88,7 +88,9 @@ public struct Condition {
     
     public init(id: Int, description: String) {
         self.id = id
+        
         let detail = Detail(id)
+        
         self.detail = detail
         self.overview = Overview(detail)
         self.description = description

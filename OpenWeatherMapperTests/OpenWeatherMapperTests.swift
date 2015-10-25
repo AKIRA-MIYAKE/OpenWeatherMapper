@@ -9,11 +9,15 @@
 import XCTest
 import OpenWeatherMapper
 
+
 class OpenWeatherMapperTests: XCTestCase {
+    
+    var client: Client?
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        client = Client(APPID: "bd82977b86bf27fb59a04b61b657fb6f")
     }
     
     override func tearDown() {
@@ -22,34 +26,19 @@ class OpenWeatherMapperTests: XCTestCase {
     }
     
     func testGetWeather() {
-        let expectation = expectationWithDescription("Get weather")
+        let expectation = expectationWithDescription("Get current weather")
         
-        let client = Client(APPID: "")
-        client.getWeather(["q": "Tokyo"]) { result in
+        let coordinate = Coordinate(latitude: 35, longitude: 139)
+        let request = GetWeatherRequest(coordinate)
+        
+        client!.call(request) { (result) -> Void in
             switch result {
             case .Success(let value):
-                print(value.condition.description)
+                print(value)
                 expectation.fulfill()
             case .Failure(let error):
                 print(error)
-            }
-        }
-        
-        waitForExpectationsWithTimeout(5.0, handler: nil)
-    }
-    
-    func testGetWeatherWithCoordinate() {
-        let expectation = expectationWithDescription("Get weather")
-        
-        let client = Client(APPID: "")
-        let coord = Coordinate(latitude: 35, longitude: 139)
-        client.getWeather(coordinate: coord) { result in
-            switch result {
-            case .Success(let value):
-                print(value.condition.description)
-                expectation.fulfill()
-            case .Failure(let error):
-                print(error)
+                XCTAssert(false)
             }
         }
         
@@ -59,36 +48,17 @@ class OpenWeatherMapperTests: XCTestCase {
     func testGetForecast() {
         let expectation = expectationWithDescription("Get forecast")
         
-        let client = Client(APPID: "")
-        client.getForecast(["q": "Tokyo"]) { result in
+        let coordinate = Coordinate(latitude: 35, longitude: 139)
+        let request = GetForecastRequest(coordinate)
+        
+        client!.call(request) { (result) -> Void in
             switch result {
             case .Success(let value):
-                if value.count > 0 {
-                    print(value[0].condition.description)
-                    expectation.fulfill()
-                }
+                print(value.first)
+                expectation.fulfill()
             case .Failure(let error):
                 print(error)
-            }
-        }
-        
-        waitForExpectationsWithTimeout(5.0, handler: nil)
-    }
-    
-    func testGetForecastWithCoordinate() {
-        let expectation = expectationWithDescription("Get forecast")
-        
-        let client = Client(APPID: "")
-        let coord = Coordinate(latitude: 35, longitude: 139)
-        client.getForecast(coordinate: coord) { result in
-            switch result {
-            case .Success(let value):
-                if value.count > 0 {
-                    print(value[0].condition.description)
-                    expectation.fulfill()
-                }
-            case .Failure(let error):
-                print(error)
+                XCTAssert(false)
             }
         }
         
@@ -98,36 +68,17 @@ class OpenWeatherMapperTests: XCTestCase {
     func testGetDailyForecast() {
         let expectation = expectationWithDescription("Get daily forecast")
         
-        let client = Client(APPID: "")
-        client.getDailyForecast(["q": "Tokyo", "cnt": 16]) { result in
+        let coordinate = Coordinate(latitude: 35, longitude: 139)
+        let request = GetDailyForecastRequest(coordinate, count: 7)
+        
+        client!.call(request) { (result) -> Void in
             switch result {
             case .Success(let value):
-                if value.count > 0 {
-                    print(value[0].condition.description)
-                    expectation.fulfill()
-                }
+                XCTAssertEqual(value.count, 7)
+                expectation.fulfill()
             case .Failure(let error):
                 print(error)
-            }
-        }
-        
-        waitForExpectationsWithTimeout(5.0, handler: nil)
-    }
-    
-    func testGetDailyForecastWithCoordinate() {
-        let expectation = expectationWithDescription("Get daily forecast")
-        
-        let client = Client(APPID: "")
-        let coord = Coordinate(latitude: 35, longitude: 139)
-        client.getDailyForecast(coordinate: coord, count: 16) { result in
-            switch result {
-            case .Success(let value):
-                if value.count > 0 {
-                    print(value[0].condition.description)
-                    expectation.fulfill()
-                }
-            case .Failure(let error):
-                print(error)
+                XCTAssert(false)
             }
         }
         
