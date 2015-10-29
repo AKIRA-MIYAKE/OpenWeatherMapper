@@ -2,49 +2,22 @@
 //  Temperature.swift
 //  OpenWeatherMapper
 //
-//  Created by MiyakeAkira on 2015/08/10.
-//  Copyright (c) 2015年 Miyake Akira. All rights reserved.
+//  Created by MiyakeAkira on 2015/10/27.
+//  Copyright © 2015年 Miyake Akira. All rights reserved.
 //
+
+public enum TemperatureDegree {
+    case Kelvin
+    case Celsius
+    case Fahrenheit
+}
+
 
 public struct Temperature {
     
-    public enum Degree {
-        case Kelvin
-        case Celsius
-        case Fahrenheit
-        
-        public func toString() -> String {
-            switch self {
-            case .Kelvin:
-                return "Kelvin"
-            case .Celsius:
-                return "Celsius"
-            case .Fahrenheit:
-                return "Fahrenheit"
-            }
-        }
-        
-        public func toDisplayString() -> String {
-            switch self {
-            case .Kelvin:
-                return "K"
-            case .Celsius:
-                return "°"
-            case .Fahrenheit:
-                return "°"
-            }
-        }
-    }
-    
-    
-    // MARK: - let
-    
     private let rawValue: Double
     
-    
-    // MARK: - Initialize
-    
-    public init(_ value: Double, degree: Degree) {
+    public init(_ value: Double, degree: TemperatureDegree) {
         switch degree {
         case .Kelvin:
             self.rawValue = value
@@ -55,10 +28,7 @@ public struct Temperature {
         }
     }
     
-    
-    // MARK: - Method
-    
-    public func get(degree degree: Degree) -> Double {
+    public func get(degree degree: TemperatureDegree) -> Double {
         switch degree {
         case .Kelvin:
             return rawValue
@@ -67,6 +37,23 @@ public struct Temperature {
         case .Fahrenheit:
             return rawValue * 9 / 5 - 459.67
         }
+    }
+    
+}
+
+
+public struct Temperatures {
+    
+    public let maximum: Temperature
+    public let minimum: Temperature
+    
+    public var average: Temperature {
+        return Temperature((maximum.get(degree: .Kelvin) + minimum.get(degree: .Kelvin)) / 2, degree: .Kelvin)
+    }
+    
+    public init(maximum: Temperature, minimum: Temperature) {
+        self.maximum = maximum
+        self.minimum = minimum
     }
     
 }
