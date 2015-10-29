@@ -2,8 +2,8 @@
 //  City.swift
 //  OpenWeatherMapper
 //
-//  Created by MiyakeAkira on 2015/08/10.
-//  Copyright (c) 2015年 Miyake Akira. All rights reserved.
+//  Created by MiyakeAkira on 2015/10/27.
+//  Copyright © 2015年 Miyake Akira. All rights reserved.
 //
 
 public struct City {

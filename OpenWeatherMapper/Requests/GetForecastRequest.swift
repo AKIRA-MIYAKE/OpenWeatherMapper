@@ -1,18 +1,53 @@
 //
-//  ForecastResponseParser.swift
+//  GetForecastRequest.swift
 //  OpenWeatherMapper
 //
-//  Created by MiyakeAkira on 2015/08/10.
-//  Copyright (c) 2015年 Miyake Akira. All rights reserved.
+//  Created by MiyakeAkira on 2015/10/27.
+//  Copyright © 2015年 Miyake Akira. All rights reserved.
 //
 
-import SwiftyJSON
+import Foundation
 import Result
+import SwiftyJSON
 
 
-public class ForecastResponseParser {
+public class GetForecastRequest: Request {
     
-    public func parse(data: AnyObject) -> GettingForecastResult {
+    // MARK: - Typealias
+    
+    public typealias Forecast = [Weather]
+    public typealias Entity = Forecast
+    
+    
+    // MARK: - Variables
+    
+    public private (set) var method: String = "GET"
+    public private (set) var path: String = "/data/2.5/forecast"
+    public var parameters: [String: AnyObject]
+    
+    
+    // MARK: - Initialize
+    
+    public init(cityName: String) {
+        self.parameters = ["q": cityName]
+    }
+    
+    public init(cityName: String, countryCode: String) {
+        self.parameters = ["q": "\(cityName),\(countryCode)"]
+    }
+    
+    public init(cityId: Int) {
+        self.parameters = ["id": cityId]
+    }
+    
+    public init(_ coordinate: Coordinate) {
+        self.parameters = ["lat": coordinate.latitude, "lon": coordinate.longitude]
+    }
+    
+    
+    // MARK: - Method
+    
+    public func parse(data: AnyObject) -> Entity? {
         let json = JSON(data)
         
         
@@ -36,10 +71,8 @@ public class ForecastResponseParser {
         
         
         if let city = city, let coordinate = coordinate {
-            
             if let list = json["list"].array {
-                
-                var weathers = [Weather]()
+                var forecast = [Weather]()
                 
                 for item in list {
                     
@@ -65,45 +98,38 @@ public class ForecastResponseParser {
                         temperatureMin = nil
                     }
                     
+                    let temperatures: Temperatures?
+                    if let max = temperatureMax, let min = temperatureMin {
+                        temperatures = Temperatures(maximum: max, minimum: min)
+                    } else {
+                        temperatures = nil
+                    }
+                    
                     
                     let condition: Condition?
                     if let id = item["weather"][0]["id"].int,
                         description = item["weather"][0]["description"].string {
-                        condition = Condition(id: id, description: description)
+                            condition = Condition(id: id, description: description)
                     } else {
                         condition = nil
                     }
                     
                     
-                    if let condition = condition,
-                        let temperatureMax = temperatureMax,
-                        let temperatureMin = temperatureMin,
-                        let date = date
-                    {
-                        let weather = Weather(
-                            condition: condition,
-                            temperatureMax: temperatureMax,
-                            temperatureMin: temperatureMin,
-                            city: city,
-                            coordinate: coordinate,
-                            date: date)
-                        
-                        weathers.append(weather)
+                    if let condition = condition, let temperatures = temperatures, let date = date {
+                        let weather = Weather(condition: condition, temperatures: temperatures, city: city, coordinate: coordinate, date: date)
+                        forecast.append(weather)
                     }
                     
                 }
                 
-                return GettingForecastResult.Success(weathers)
-                
+                return forecast
             } else {
-                let error = OpenWeatherMapperError.ParseError(data)
-                return GettingForecastResult.Failure(error)
+                return nil
             }
-            
         } else {
-            let error = OpenWeatherMapperError.ParseError(data)
-            return GettingForecastResult.Failure(error)
+            return nil
         }
     }
     
 }
+
