@@ -37,6 +37,11 @@
                BlueprintName = "OpenWeatherMapperTests"
                ReferencedContainer = "container:OpenWeatherMapper.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "OpenWeatherMapperTests/unspecifiedMethod_-[OpenWeatherMapperTests (null)]()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
